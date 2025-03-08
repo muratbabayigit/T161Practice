@@ -16,7 +16,7 @@ public class P22_forLoop {
                 sayac++;
             }
             if (cumle.toLowerCase().charAt(i)=='c'){
-                break;
+                break; //Döngüyü durdur
             }
 
         }
