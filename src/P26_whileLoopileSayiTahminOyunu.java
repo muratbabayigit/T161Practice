@@ -41,7 +41,6 @@ public class P26_whileLoopileSayiTahminOyunu {
                 System.out.println("Üzgünüm. 5 tahminde de bilmedin. Oyun bitti!");
             }
 
-
         }
 
     }
