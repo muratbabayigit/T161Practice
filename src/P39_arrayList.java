@@ -12,7 +12,18 @@ public class P39_arrayList {
          * OUTPUT : [Veli,Omer]
          */
 
-        List<String> list=new ArrayList<>(Arrays.asList("Ali","Veli","Ayse","Fatma","Omer"));
+        List<String> list=new ArrayList<>(Arrays.asList("Ali","Veli","Ayşe","Fatma","Ömer"));
+
+        List<String> newList=new ArrayList<>();
+
+        for (String each:list  ) {
+            if (!each.toLowerCase().contains("a")){
+                newList.add(each);
+            }
+
+        }
+        System.out.println(list);
+        System.out.println(newList);
 
 
 
