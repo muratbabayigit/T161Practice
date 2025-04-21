@@ -36,6 +36,11 @@ public class P01_helloWorld {
         sout/serr
   */
 
+        String b="10";
+        int c=20;
+        System.out.println(b+c); //1020
+        System.out.println(Integer.parseInt(b)+c);
+
 
 
 
