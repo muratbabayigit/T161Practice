@@ -26,4 +26,14 @@ public class Ogrenci extends Kisi{
         this.ogrNo = ogrNo;
     }
 
+    public Ogrenci() {
+    }
+
+    @Override
+    public String toString() {
+        return "Ogrenci{" +
+                "sinif='" + sinif + '\'' +
+                ", ogrNo=" + ogrNo +
+                '}';
+    }
 }
