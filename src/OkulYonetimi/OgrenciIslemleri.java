@@ -55,13 +55,13 @@ public class OgrenciIslemleri implements I_islemler{
         System.out.print("Yaşı: ");
         int age= scan.nextInt();
         System.out.print("Sınıfı: ");
+        scan.nextLine();
         String sinif= scan.nextLine();
-
         Ogrenci ogrenci=new Ogrenci(ad,soyad,tcKimlikNo,age,sinif,ogrNo++);
         ogrenciList.add(ogrenci);
         System.out.println("İşlem Tamamalandı.");
-        System.out.println("Kaydedilen Öprenci Bilgileri:");
-        listeleme();
+        System.out.println("Kaydedilen Öğrenci Bilgileri:");
+        //listeleme();
         ogrMenu();
 
 

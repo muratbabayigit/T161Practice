@@ -1,5 +1,6 @@
 package OkulYonetimi;
 
+import java.awt.*;
 import java.util.Scanner;
 
 public class AnaMenu {
@@ -25,13 +26,16 @@ public class AnaMenu {
         char secim = scan.next().toLowerCase().charAt(0);
 
         switch (secim) {
-            case 1: {
-
+            case '1': {
+                OgrenciIslemleri ogrenciIslemleri=new OgrenciIslemleri();
+                ogrenciIslemleri.ogrMenu();
             }
-            case 2: {
+            case '2': {
+                OgretmenIslemleri ogretmenIslemleri=new OgretmenIslemleri();
 
             }
             case 'Q': {
+                System.exit(0);
 
             }
             default: {
