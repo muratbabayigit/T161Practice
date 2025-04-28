@@ -21,7 +21,7 @@ public class OgrenciIslemleri implements I_islemler{
 
    */
     Scanner scan=new Scanner(System.in);
-    int ogrNo=202501;
+    int ogrNo=202500;
     List<Ogrenci> ogrenciList=new ArrayList<>();
 
     void ogrMenu(){
@@ -44,32 +44,90 @@ public class OgrenciIslemleri implements I_islemler{
 
     @Override
     public void ekleme() {
+        System.out.println("====================================\n YENİ ÖĞRENCİ EKLME MODÜLÜ \n====================================");
+        scan.nextLine();
+        System.out.print("Adı: ");
+        String ad= scan.nextLine();
+        System.out.print("Soyadı: ");
+        String soyad= scan.nextLine();
+        System.out.print("TC Kimlik No: ");
+        String tcKimlikNo= scan.nextLine();
+        System.out.print("Yaşı: ");
+        int age= scan.nextInt();
+        System.out.print("Sınıfı: ");
+        String sinif= scan.nextLine();
+
+        Ogrenci ogrenci=new Ogrenci(ad,soyad,tcKimlikNo,age,sinif,ogrNo++);
+        ogrenciList.add(ogrenci);
+        System.out.println("İşlem Tamamalandı.");
+        System.out.println("Kaydedilen Öprenci Bilgileri:");
+        listeleme();
+        ogrMenu();
 
 
     }
 
     @Override
     public void arama() {
+        System.out.println("====================================\n ÖĞRENCİ ARAMA MODÜLÜ \n====================================");
+        scan.nextLine();
+        System.out.print("TC Kimlik Numarası: ");
+        String tcKimlikNo= scan.nextLine();
+
+        for (Ogrenci each:ogrenciList) {
+            if (each.getTcKimlikNo().equals(tcKimlikNo)){
+                System.out.println("Aradığınız Kişi: \n"+each);
+                ogrMenu();
+            }else {
+                System.out.println("kayıtlarımızda "+tcKimlikNo+ " numaralı bir kayıt bulunmamaktadır");
+                ogrMenu();
+            }
+
+        }
+
+
+
+
 
     }
 
     @Override
     public void listeleme() {
+        for (Ogrenci each:ogrenciList ) {
+            System.out.println(each);
+        }
 
     }
 
     @Override
     public void silme() {
+        System.out.println("====================================\n ÖĞRENCİ SİLME MODÜLÜ \n====================================");
+        scan.nextLine();
+        System.out.print("TC Kimlik Numarası: ");
+        String tcKimlikNo= scan.nextLine();
+        for (Ogrenci each:ogrenciList) {
+            if (each.getTcKimlikNo().equals(tcKimlikNo)){
+                ogrenciList.remove(each);
+                System.out.println(tcKimlikNo+" numaralı kayıt silindi");
+                listeleme();
+                ogrMenu();
+            }
+
+        }
+
 
     }
 
     @Override
     public void anamenu() {
+        AnaMenu anaMenu=new AnaMenu();
+        anaMenu.menu();
 
     }
 
     @Override
     public void cikis() {
+        System.exit(0);
 
     }
 }
